@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiwibytes — Spatial Universe Redesign</title>
+  <!-- Google Fonts: Outfit & Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="galaxy-viewport">
+
+  <!-- 1. Ambient Background Particle Canvas -->
+  <canvas id="galaxy-bg-particles"></canvas>
+
+  <!-- 2. Heads-Up Display (Fixed HUD Controls Overlay) -->
+  <header class="hud-header">
+    <div class="hud-branding">
+      <span class="logo-kiwi">kiwi</span><span class="logo-bytes">bytes</span><span class="logo-dot">.</span>
+    </div>
+    
+    <div class="hud-telemetry">
+      <span class="telemetry-label">SYS_COORD:</span>
+      <span id="coord-ticker">X: 000 Y: 000</span>
+    </div>
+    
+    <div class="hud-audio-control" id="hud-audio-btn" title="Toggle System Audio Engine">
+      <svg class="audio-icon audio-on hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+      <svg class="audio-icon audio-off" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+      <span class="audio-status-label">AUDIO OFF</span>
+    </div>
+  </header>
+
+  <!-- 3. Fast Travel Navigation HUD Sidebar -->
+  <nav class="hud-nav">
+    <div class="hud-nav-item active" data-target="home-portal" title="Home Sector">
+      <span class="hud-nav-code">00</span><span class="hud-nav-name">HOME</span>
+    </div>
+    <div class="hud-nav-item" data-target="services-nebula" title="Capabilities Nebula">
+      <span class="hud-nav-code">01</span><span class="hud-nav-name">SERVICES</span>
+    </div>
+    <div class="hud-nav-item" data-target="products-cluster" title="Products Constellation">
+      <span class="hud-nav-code">02</span><span class="hud-nav-name">PRODUCTS</span>
+    </div>
+    <div class="hud-nav-item" data-target="process-map" title="Roadmap Coordinates">
+      <span class="hud-nav-code">03</span><span class="hud-nav-name">PROCESS</span>
+    </div>
+    <div class="hud-nav-item" data-target="project-builder-console" title="Project Builder Console">
+      <span class="hud-nav-code">04</span><span class="hud-nav-name">BUILDER</span>
+    </div>
+  </nav>
+
+  <!-- 4. Interactive Radar Minimap HUD -->
+  <div class="hud-radar">
+    <div class="radar-header">
+      <span class="radar-title">SYSTEM RADAR</span>
+      <span class="radar-ping"></span>
+    </div>
+    <div class="radar-display">
+      <canvas id="radar-canvas" width="140" height="140"></canvas>
+    </div>
+    <div class="radar-coordinates">SECTOR_G12</div>
+  </div>
+
+  <!-- 5. Draggable infinite coordinates space canvas -->
+  <main class="galaxy-canvas" id="canvas-container">
+    
+    <!-- Coordinate Grid background overlay -->
+    <div class="canvas-grid-overlay"></div>
+    <div class="galaxy-center-ring"></div>
+
+    <!-- Cluster 0: Home Portal (Coordinate 0, 0) -->
+    <section class="galaxy-cluster center-portal" id="home-portal">
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <div class="core-orbiting-ring"></div>
+      </div>
+      <div class="portal-info-panel text-center">
+        <span class="cluster-tag-badge">SYSTEM STARGATE</span>
+        <h1 class="portal-title">
+          We engineer <span class="gradient-text">digital momentum</span>.
+        </h1>
+        <p class="portal-description">
+          Kiwibytes crafts premium web applications, custom AI automations, and scalable cloud systems. Drag to explore the galaxy or scroll to navigate.
+        </p>
+        
+        <div class="hud-nav-help">
+          <svg class="mouse-scroll-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="7"></rect><line x1="12" y1="6" x2="12" y2="10"></line></svg>
+          <span>DRAG CANVAS OR SCROLL TO NAVIGATE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cluster 1: Services Nebula (Coordinate 900, -700) -->
+    <section class="galaxy-cluster services-nebula" id="services-nebula">
+      <div class="cluster-heading">
+        <span class="cluster-tag-badge">COORDINATES: SVC_N01</span>
+        <h2 class="cluster-title">Core Capabilities</h2>
+        <p class="cluster-intro">Bespoke technical execution engineered to scale your digital presence.</p>
+      </div>
+
+      <div class="cluster-grid service-cards-container">
+        <!-- Card 1 -->
+        <div class="spatial-card service-card">
+          <div class="card-glow-spot"></div>
+          <div class="card-num">01</div>
+          <h3 class="card-title">AI Automations & Agents</h3>
+          <p class="card-text">
+            Streamline operational bottlenecks with custom cognitive models, LLM pipelines, autonomous routing workflows, and real-time semantic query processing.
+          </p>
+          <ul class="card-tags">
+            <li>AI Agents</li>
+            <li>RPA</li>
+            <li>NLP</li>
+          </ul>
+        </div>
+        <!-- Card 2 -->
+        <div class="spatial-card service-card">
+          <div class="card-glow-spot"></div>
+          <div class="card-num">02</div>
+          <h3 class="card-title">Scalable Cloud Infrastructure</h3>
+          <p class="card-text">
+            Architect ultra-resilient multi-region networks on AWS/GCP. High-availability container engines, serverless deployments, and automated CI/CD pipelines.
+          </p>
+          <ul class="card-tags">
+            <li>DevOps</li>
+            <li>Kubernetes</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+        <!-- Card 3 -->
+        <div class="spatial-card service-card">
+          <div class="card-glow-spot"></div>
+          <div class="card-num">03</div>
+          <h3 class="card-title">Premium Web Engineering</h3>
+          <p class="card-text">
+            State-of-the-art interactive frontends styled with immaculate precision. Lightning-fast response times, rich micro-animations, and clean semantic structures.
+          </p>
+          <ul class="card-tags">
+            <li>Tailwind</li>
+            <li>Vite</li>
+            <li>GSAP</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cluster 2: Products Constellation (Coordinate 1100, 700) -->
+    <section class="galaxy-cluster products-cluster" id="products-cluster">
+      <div class="cluster-heading">
+        <span class="cluster-tag-badge">COORDINATES: PRD_C02</span>
+        <h2 class="cluster-title">Proprietary Software</h2>
+        <p class="cluster-intro">Direct-to-market software tools engineered in-house to solve real problems.</p>
+      </div>
+
+      <div class="cluster-grid product-cards-container">
+        <!-- Product 1 -->
+        <div class="spatial-card product-card">
+          <div class="card-glow-spot"></div>
+          <div class="card-top-row">
+            <span class="badge-accent">AI Agent</span>
+            <span class="card-emoji">💬</span>
+          </div>
+          <h3 class="card-title">Reviewify</h3>
+          <p class="card-subtitle">Google Reviews Automation</p>
+          <p class="card-text">
+            Syncs with Google Business Profile. Automatically processes new customer feedback, runs sentiment scoring, and posts contextual replies.
+          </p>
+          <div class="card-metrics">
+            <span class="metric-val">100%</span>
+            <span class="metric-label">Automated Replies</span>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="spatial-card product-card">
+          <div class="card-glow-spot"></div>
+          <div class="card-top-row">
+            <span class="badge-accent">Health Tech</span>
+            <span class="card-emoji">🥗</span>
+          </div>
+          <h3 class="card-title">Nourish</h3>
+          <p class="card-subtitle">AI Nutrition Engine</p>
+          <p class="card-text">
+            Advanced mobile vision model to count macronutrients directly from food snapshots, generating customized recipe cards in real time.
+          </p>
+          <div class="card-metrics">
+            <span class="metric-val">98.4%</span>
+            <span class="metric-label">Vision Accuracy</span>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="spatial-card product-card">
+          <div class="card-glow-spot"></div>
+          <div class="card-top-row">
+            <span class="badge-accent">RPA & Extensions</span>
+            <span class="card-emoji">🕸️</span>
+          </div>
+          <h3 class="card-title">WebTarsus</h3>
+          <p class="card-subtitle">No-Code Chrome RPA</p>
+          <p class="card-text">
+            Record complex browser commands and auto-compile them into robust browser workflows, triggered automatically via simple text queries.
+          </p>
+          <div class="card-metrics">
+            <span class="metric-val">0</span>
+            <span class="metric-label">Coding Required</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cluster 3: Development Process Nebula (Coordinate -900, 700) -->
+    <section class="galaxy-cluster process-map" id="process-map">
+      <div class="cluster-heading">
+        <span class="cluster-tag-badge">COORDINATES: PRC_N03</span>
+        <h2 class="cluster-title">Our Roadmap</h2>
+        <p class="cluster-intro">A transparent step-by-step engineering journey from scoping to deployment.</p>
+      </div>
+
+      <div class="process-timeline-container">
+        <!-- Horizontal Connection Line Track -->
+        <div class="timeline-horizontal-track">
+          <div class="timeline-horizontal-active-track" id="active-timeline-trail"></div>
+        </div>
+
+        <div class="process-step-deck">
+          <!-- Step 1 -->
+          <div class="process-step-card-wrapper" data-step-idx="1">
+            <div class="step-horizontal-bullet">
+              <div class="bullet-inner"></div>
+            </div>
+            <div class="step-horizontal-card">
+              <div class="step-meta-row">
+                <span class="step-num-badge">PHASE_01</span>
+                <span class="step-status-tag">COMPILED</span>
+              </div>
+              <h3 class="step-title-text">Scope & Architect</h3>
+              <p class="step-desc-text">
+                Establish core systems data models and security constraints before code is built.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-step-card-wrapper" data-step-idx="2">
+            <div class="step-horizontal-bullet">
+              <div class="bullet-inner"></div>
+            </div>
+            <div class="step-horizontal-card">
+              <div class="step-meta-row">
+                <span class="step-num-badge">PHASE_02</span>
+                <span class="step-status-tag">RENDERED</span>
+              </div>
+              <h3 class="step-title-text">Bespoke Design</h3>
+              <p class="step-desc-text">
+                Immaculate UI design crafted custom to wow users at first interaction.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-step-card-wrapper" data-step-idx="3">
+            <div class="step-horizontal-bullet">
+              <div class="bullet-inner"></div>
+            </div>
+            <div class="step-horizontal-card">
+              <div class="step-meta-row">
+                <span class="step-num-badge">PHASE_03</span>
+                <span class="step-status-tag">PROCESSING</span>
+              </div>
+              <h3 class="step-title-text">Parallel Iteration</h3>
+              <p class="step-desc-text">
+                Develop systems across separate cloud containers for speed and continuous verification.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-step-card-wrapper" data-step-idx="4">
+            <div class="step-horizontal-bullet">
+              <div class="bullet-inner"></div>
+            </div>
+            <div class="step-horizontal-card">
+              <div class="step-meta-row">
+                <span class="step-num-badge">PHASE_04</span>
+                <span class="step-status-tag">STANDBY</span>
+              </div>
+              <h3 class="step-title-text">Production Release</h3>
+              <p class="step-desc-text">
+                Zero-downtime integration and analytics hooks monitoring traffic patterns.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cluster 4: Interactive Project Console (Coordinate -1000, -700) -->
+    <section class="galaxy-cluster project-builder-console" id="project-builder-console">
+      <div class="cluster-heading">
+        <span class="cluster-tag-badge">COORDINATES: BLD_G04</span>
+        <h2 class="cluster-title">Project Planner</h2>
+        <p class="cluster-intro">Configure your project details to get a cost estimate instantly.</p>
+      </div>
+
+      <div class="terminal-container">
+        <!-- Terminal Window chrome bar -->
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot-btn red"></span>
+            <span class="dot-btn yellow"></span>
+            <span class="dot-btn green"></span>
+          </div>
+          <div class="terminal-tab-title">project_planner.log</div>
+        </div>
+
+        <form id="project-builder-form" class="terminal-body" onsubmit="return false;">
+          <!-- Step 1 -->
+          <div class="terminal-step active" data-step="1">
+            <div class="prompt-line">
+              <span class="prompt-sig">$</span> <span class="prompt-cmd">enter_company_name</span>
+            </div>
+            <div class="terminal-input-block">
+              <label for="project-name" class="input-label">> ENTER YOUR COMPANY NAME:</label>
+              <input type="text" id="project-name" class="terminal-text-input" placeholder="e.g. Acme Corp" required autocomplete="off">
+              <span class="validation-error" id="err-step-1">COMPANY NAME REQUIRED</span>
+            </div>
+            <div class="terminal-actions">
+              <button type="button" class="btn-term-action next-step">CONFIRM & CONTINUE >></button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="terminal-step" data-step="2">
+            <div class="prompt-line">
+              <span class="prompt-sig">$</span> <span class="prompt-cmd">configure_project_budget</span>
+            </div>
+            <div class="terminal-input-block">
+              <label for="budget-range" class="input-label">> CHOOSE YOUR BUDGET ($):</label>
+              <div class="slider-wrapper">
+                <input type="range" id="budget-range" min="10000" max="150000" step="5000" value="45000">
+                <div class="slider-val-display">$<span id="budget-val">45,000</span></div>
+              </div>
+              
+              <!-- Budgets recommendation layout -->
+              <div class="budget-tiers-hud">
+                <div class="tier-hud-card active" id="hud-mvp">
+                  <div class="tier-code">BASIC PROJECT</div>
+                  <div class="tier-limits">&lt; $25k</div>
+                </div>
+                <div class="tier-hud-card" id="hud-pro">
+                  <div class="tier-code">STANDARD PROJECT</div>
+                  <div class="tier-limits">$25k - $75k</div>
+                </div>
+                <div class="tier-hud-card" id="hud-enterprise">
+                  <div class="tier-code">CUSTOM ENTERPRISE</div>
+                  <div class="tier-limits">&gt; $75k</div>
+                </div>
+              </div>
+            </div>
+            <div class="terminal-actions">
+              <button type="button" class="btn-term-action back-step">< BACK</button>
+              <button type="button" class="btn-term-action next-step">CONFIRM & CONTINUE >></button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="terminal-step" data-step="3">
+            <div class="prompt-line">
+              <span class="prompt-sig">$</span> <span class="prompt-cmd">enter_contact_email</span>
+            </div>
+            <div class="terminal-input-block">
+              <label for="user-email" class="input-label">> ENTER YOUR EMAIL ADDRESS:</label>
+              <input type="email" id="user-email" class="terminal-text-input" placeholder="e.g. admin@acme.com" required autocomplete="off">
+              <span class="validation-error" id="err-step-3">VALID EMAIL REQUIRED</span>
+            </div>
+            <div class="terminal-actions">
+              <button type="button" class="btn-term-action back-step">< BACK</button>
+              <button type="submit" class="btn-term-action submit-form">GET MY ESTIMATE</button>
+            </div>
+          </div>
+          
+          <!-- Step 4: Success -->
+          <div class="terminal-step" data-step="4">
+            <div class="prompt-line">
+              <span class="prompt-sig">$</span> <span class="prompt-cmd">estimate_status --active</span>
+            </div>
+            <div class="handshake-success-hud">
+              <div class="success-alert-badge">ESTIMATE RECEIVED</div>
+              <p class="success-message">
+                Your project details have been successfully recorded. We have sent a copy of your estimate parameters to <span id="success-email" class="success-highlight">admin@acme.com</span>. Our team will contact you within 1 business day.
+              </p>
+              <button type="button" class="btn-term-action restart-form">RESTART CALCULATOR</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- External Space Ambient Soundtrack -->
+  <audio id="bg-soundtrack" loop src="https://assets.mixkit.co/music/preview/mixkit-space-ambient-589.mp3"></audio>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
