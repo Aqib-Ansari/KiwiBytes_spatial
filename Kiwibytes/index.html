@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiwibytes | Bespoke Digital Engineering & AI Automation</title>
+  <meta name="description" content="Kiwibytes engineers premium web applications, bespoke AI integrations, autonomous agents, cloud architectures, and Shopify stores with an energetic, modern minimalist design.">
+  
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Page Loader Overlays -->
+  <div class="page-loader">
+    <div class="loader-logo">
+      <span class="logo-kiwi">kiwi</span><span class="logo-bytes">bytes</span><span class="logo-dot">.</span>
+    </div>
+    <div class="loader-progress-track">
+      <div class="loader-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo" id="logo">
+        <span class="logo-kiwi">kiwi</span><span class="logo-bytes">bytes</span><span class="logo-dot">.</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="#services-anchor" class="nav-link">Services</a>
+        <a href="#products-anchor" class="nav-link">Products</a>
+        <a href="#process-anchor" class="nav-link">Process</a>
+        <a href="#contact-anchor" class="nav-link">Contact</a>
+      </nav>
+      
+      <button class="btn btn-primary trigger-project-builder">
+        <span>Launch Project Builder</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </button>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay">
+    <div class="mobile-nav-content">
+      <nav class="mobile-nav">
+        <a href="#services-anchor" class="mobile-nav-link">Services</a>
+        <a href="#products-anchor" class="mobile-nav-link">Products</a>
+        <a href="#process-anchor" class="mobile-nav-link">Process</a>
+        <a href="#contact-anchor" class="mobile-nav-link">Contact</a>
+      </nav>
+      <button class="btn btn-primary btn-large trigger-project-builder" style="margin-top: 2rem; width: 100%;">
+        <span>Launch Project Builder</span>
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+      <div class="grid-background"></div>
+      <div class="glow-orb glow-orb-1"></div>
+      <div class="glow-orb glow-orb-2"></div>
+      <canvas id="hero-canvas"></canvas>
+      <div class="container hero-container">
+        <div class="hero-tag">
+          <span class="tag-pulse"></span>
+          <span>Open for Q3 Project Booking</span>
+        </div>
+        <h1 class="hero-title">
+          We engineer <span class="gradient-text">digital momentum</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Kiwibytes crafts premium web applications, custom AI automations, and scalable cloud systems. Energetic design meets professional-grade software engineering.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-large trigger-project-builder">
+            <span>Launch Project Builder</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <a href="#services-anchor" class="btn btn-secondary btn-large">
+            <span>Explore Our Services</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">99.9%</span>
+            <span class="stat-label">System Uptime</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">10x</span>
+            <span class="stat-label">Execution Speed</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">Active Monitoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Scrolling Marquee Ribbon -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <span>BESPOKE SOFTWARE ENGINEERING</span>
+        <span class="marquee-dot"></span>
+        <span>AUTONOMOUS AI AGENTS</span>
+        <span class="marquee-dot"></span>
+        <span>HIGH-SCALE CLOUD TOPOLOGY</span>
+        <span class="marquee-dot"></span>
+        <span>CONVERSION OPTIMIZATION</span>
+        <span class="marquee-dot"></span>
+        <span>BESPOKE SOFTWARE ENGINEERING</span>
+        <span class="marquee-dot"></span>
+        <span>AUTONOMOUS AI AGENTS</span>
+        <span class="marquee-dot"></span>
+        <span>HIGH-SCALE CLOUD TOPOLOGY</span>
+        <span class="marquee-dot"></span>
+        <span>CONVERSION OPTIMIZATION</span>
+        <span class="marquee-dot"></span>
+      </div>
+    </div>
+
+    <!-- Services Anchor -->
+    <div id="services-anchor" style="position: relative; top: -100px;"></div>
+
+    <!-- Side-by-Side Features Scroll Section -->
+    <section class="scroll-showcase">
+      <div class="container scroll-showcase-container">
+        
+        <!-- Sticky Left Panel (Canvas) -->
+        <div class="canvas-sticky-wrapper">
+          <div class="canvas-container">
+            <div class="canvas-loading" id="canvas-loader">
+              <div class="spinner"></div>
+              <div class="loader-text">Initializing interactive 3D scrub... <span id="load-pct">0%</span></div>
+            </div>
+            <canvas id="scroll-canvas" width="640" height="640"></canvas>
+            <div class="canvas-caption">
+              <span class="pulse-indicator"></span>
+              <span id="canvas-dynamic-label">Interactive Scroll Sequence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrolling Right Panel (Content) -->
+        <div class="scroll-content-wrapper">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-tag">Core Capabilities</span>
+            <h2 class="section-title">What we build.</h2>
+            <p class="section-desc">Scroll down to explore how we blend cutting-edge engineering with fluid, high-performing user experiences.</p>
+          </div>
+
+          <!-- Service Card 1 -->
+          <div class="service-card reveal-on-scroll" data-frame-start="0" data-frame-end="49" id="service-web">
+            <div class="card-number">01</div>
+            <h3 class="card-title">Premium Web Engineering</h3>
+            <p class="card-desc">
+              We design and construct lightning-fast, visually stunning custom websites and frontend applications. Optimized for search engines, web vitals, and conversion flow.
+            </p>
+            <ul class="card-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Next.js, React, & modern SPA frameworks
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Stunning, performance-first responsive layouts
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Subtle, fluid micro-interactions
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card reveal-on-scroll" data-frame-start="50" data-frame-end="99" id="service-app">
+            <div class="card-number">02</div>
+            <h3 class="card-title">Bespoke App Development</h3>
+            <p class="card-desc">
+              From conception to deployment, we build robust mobile and desktop applications with high-fidelity native feel and seamless multi-platform experiences.
+            </p>
+            <ul class="card-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                iOS, Android, & cross-platform utilities
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Offline-first local caching and syncing
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Polished interface design and system integration
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card reveal-on-scroll" data-frame-start="100" data-frame-end="149" id="service-ai">
+            <div class="card-number">03</div>
+            <h3 class="card-title">Custom AI & LLM Integrations</h3>
+            <p class="card-desc">
+              Infuse intelligent thinking directly into your software. We connect and fine-tune large language models (LLMs) and vector databases to parse data, recommend items, and search semantically.
+            </p>
+            <ul class="card-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Semantic search and custom context injection (RAG)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Secure api gateways and key/usage governance
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Custom classification and analytics models
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card reveal-on-scroll" data-frame-start="150" data-frame-end="199" id="service-agents">
+            <div class="card-number">04</div>
+            <h3 class="card-title">Autonomous AI Agents</h3>
+            <p class="card-desc">
+              Deploy autonomous workers capable of orchestrating multi-step tasks: sorting requests, conducting research, updating databases, and communicating with customers.
+            </p>
+            <ul class="card-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Agentic workflows (LangChain, CrewAI, AutoGen)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Self-healing tasks and feedback loops
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                24/7 autonomous data entry and curation
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="service-card reveal-on-scroll" data-frame-start="200" data-frame-end="249" id="service-cloud">
+            <div class="card-number">05</div>
+            <h3 class="card-title">Scalable Cloud & DevOps</h3>
+            <p class="card-desc">
+              We design, build, and audit high-availability cloud architecture. Modern continuous integration, infrastructure as code, and robust network configurations keep your platform scaling securely.
+            </p>
+            <ul class="card-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                AWS, Google Cloud, & Azure engineering
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Docker, Kubernetes, and Terraform configurations
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                CI/CD automation pipelines
+              </li>
+            </ul>
+          </div>
+
+          <!-- Service Card 6 -->
+          <div class="service-card reveal-on-scroll" data-frame-start="250" data-frame-end="299" id="service-shopify">
+            <div class="card-number">06</div>
+            <h3 class="card-title">Shopify & E-Commerce Systems</h3>
+            <p class="card-desc">
+              Turn visitors into customers. We engineer conversion-first custom Shopify templates, custom apps, headless store integrations, and fast subscription engines.
+            </p>
+            <ul class="card-bullets">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Custom Liquid themes and hydrogen headless architecture
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Complex checkout expansions and app scripts
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#74c915" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Enterprise integrations with ERPs and WMSs
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Products Anchor -->
+    <div id="products-anchor" style="position: relative; top: -100px;"></div>
+
+    <!-- Products Section -->
+    <section class="products">
+      <div class="container">
+        <div class="products-header reveal-on-scroll">
+          <span class="section-tag">Proprietary Software</span>
+          <h2 class="section-title">Our Products.</h2>
+          <p class="section-desc">We build and maintain our own suite of AI-driven products, proving our engineering depth and capability to ship high-scale platforms.</p>
+        </div>
+
+        <div class="products-grid">
+          
+          <!-- Product 1: Reviewify -->
+          <div class="product-card reveal-on-scroll">
+            <div class="product-card-top">
+              <span class="product-tag-badge">AI Agent</span>
+              <span class="product-emoji">💬</span>
+            </div>
+            <h3 class="product-title">Reviewify</h3>
+            <p class="product-subtitle">Autonomous Google Reviews Manager</p>
+            <p class="product-description">
+              An intelligent, autonomous AI review assistant that syncs with Google Business Profile. It detects new customer reviews, analyzes sentiment, and automatically drafts and posts context-aware, highly personalized replies instantly.
+            </p>
+            <div class="product-divider"></div>
+            <div class="product-footer">
+              <span class="product-metric"><strong>100%</strong> Automated Replies</span>
+              <a href="#contact-anchor" class="product-link-btn">
+                <span>Learn More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2: Nourish -->
+          <div class="product-card reveal-on-scroll">
+            <div class="product-card-top">
+              <span class="product-tag-badge">Health Tech</span>
+              <span class="product-emoji">🥗</span>
+            </div>
+            <h3 class="product-title">Nourish</h3>
+            <p class="product-subtitle">AI Health Advisor & Calorie Engine</p>
+            <p class="product-description">
+              A comprehensive mobile health partner. Using advanced computer vision, Nourish logs and counts calories directly from meal snapshots, tracking macronutrients and offering dynamic recipes and health coaching through generative AI.
+            </p>
+            <div class="product-divider"></div>
+            <div class="product-footer">
+              <span class="product-metric"><strong>98.4%</strong> Vision Accuracy</span>
+              <a href="#contact-anchor" class="product-link-btn">
+                <span>Learn More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 3: WebTarsus -->
+          <div class="product-card reveal-on-scroll">
+            <div class="product-card-top">
+              <span class="product-tag-badge">RPA & Agents</span>
+              <span class="product-emoji">🕸️</span>
+            </div>
+            <h3 class="product-title">WebTarsus</h3>
+            <p class="product-subtitle">No-Code Chrome RPA Extension</p>
+            <p class="product-description">
+              Automate complex browser flows without technical skills. WebTarsus acts as a Chrome extension recorder, and features an integrated AI Agent that executes multi-step commands via text prompts like "book a Goa hotel room on MakeMyTrip."
+            </p>
+            <div class="product-divider"></div>
+            <div class="product-footer">
+              <span class="product-metric"><strong>0</strong> Technical Coding Required</span>
+              <a href="#contact-anchor" class="product-link-btn">
+                <span>Learn More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section Anchor -->
+    <div id="process-anchor" style="position: relative; top: -100px;"></div>
+
+    <!-- Process Section -->
+    <section class="process" id="process-section">
+      <div class="container">
+        <div class="process-header reveal-on-scroll">
+          <span class="section-tag">How we work</span>
+          <h2 class="section-title">Velocity & Precision</h2>
+          <p class="section-desc">From concept to deployment, we follow a high-speed design and deployment framework.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-connector"></div>
+          <div class="process-step reveal-on-scroll">
+            <div class="step-num">01</div>
+            <h4 class="step-title">Blueprint & Estimate</h4>
+            <p class="step-text">Use our Project Builder tool to request a tailored architecture proposal. We align on scope, budget, and technologies within 24 hours.</p>
+          </div>
+          <div class="process-step reveal-on-scroll">
+            <div class="step-num">02</div>
+            <h4 class="step-title">Iterative Prototyping</h4>
+            <p class="step-text">We release functional code weekly. You get to interact, test, and adapt the application as it progresses from design to reality.</p>
+          </div>
+          <div class="process-step reveal-on-scroll">
+            <div class="step-num">03</div>
+            <h4 class="step-title">Deployment & Handover</h4>
+            <p class="step-text">We push to modern infrastructure (Vercel, AWS, GCP) with rigid automated tests. We hand over clean, thoroughly documented codebases.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner reveal-on-scroll" id="contact-anchor">
+      <div class="grid-background"></div>
+      <div class="cta-particles">
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+        <div class="cta-particle"></div>
+      </div>
+      <div class="container cta-container">
+        <h2 class="cta-title">Ready to launch your project?</h2>
+        <p class="cta-desc">Estimate your custom software cost or schedule a consultation with our system engineers in under 2 minutes.</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-large trigger-project-builder">
+            <span>Launch Project Builder</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <a href="mailto:hello@kiwibytes.io" class="btn btn-secondary btn-large">
+            <span>Talk to an Expert</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-kiwi">kiwi</span><span class="logo-bytes">bytes</span><span class="logo-dot">.</span>
+        </a>
+        <p class="footer-tagline">High-performance engineering for ambitious companies.</p>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <span class="footer-col-title">Navigation</span>
+          <a href="#services-anchor" class="footer-link">Services</a>
+          <a href="#products-anchor" class="footer-link">Products</a>
+          <a href="#process-anchor" class="footer-link">Process</a>
+          <a href="#contact-anchor" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Capabilities</span>
+          <a href="#services-anchor" class="footer-link">Web Engineering</a>
+          <a href="#services-anchor" class="footer-link">AI & Automation</a>
+          <a href="#services-anchor" class="footer-link">Cloud & DevOps</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Get in Touch</span>
+          <a href="mailto:hello@kiwibytes.io" class="footer-link">hello@kiwibytes.io</a>
+          <span class="footer-link-static">Bengaluru, IN & Remote</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Kiwibytes. All rights reserved. Professional design, premium engineering.</p>
+    </div>
+  </footer>
+
+  <!-- Project Builder Modal (Multi-step lead wizard) -->
+  <div class="modal-overlay" id="project-builder-modal">
+    <div class="modal-box">
+      <!-- Close Button -->
+      <button class="modal-close" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Modal Progress Bar -->
+      <div class="modal-progress">
+        <div class="progress-bar-fill" id="modal-progress-bar"></div>
+      </div>
+
+      <!-- Step Header -->
+      <div class="modal-header">
+        <span class="step-indicator" id="step-indicator">Step 1 of 4</span>
+        <h3 class="modal-title" id="modal-step-title">What are we building?</h3>
+        <p class="modal-subtitle" id="modal-step-subtitle">Select all services you require for this project.</p>
+      </div>
+
+      <!-- Form container -->
+      <form id="project-builder-form" novalidate>
+        
+        <!-- Step 1 Content: Services Selection -->
+        <div class="modal-step-content active" data-step="1">
+          <div class="services-select-grid">
+            <label class="select-card">
+              <input type="checkbox" name="services" value="web-dev" class="hidden-checkbox">
+              <div class="card-inner">
+                <span class="checkbox-circle"></span>
+                <span class="card-icon">🌐</span>
+                <span class="card-label">Web Dev</span>
+              </div>
+            </label>
+            <label class="select-card">
+              <input type="checkbox" name="services" value="app-dev" class="hidden-checkbox">
+              <div class="card-inner">
+                <span class="checkbox-circle"></span>
+                <span class="card-icon">📱</span>
+                <span class="card-label">App Dev</span>
+              </div>
+            </label>
+            <label class="select-card">
+              <input type="checkbox" name="services" value="ai-automation" class="hidden-checkbox">
+              <div class="card-inner">
+                <span class="checkbox-circle"></span>
+                <span class="card-icon">🤖</span>
+                <span class="card-label">AI & Automation</span>
+              </div>
+            </label>
+            <label class="select-card">
+              <input type="checkbox" name="services" value="ai-agents" class="hidden-checkbox">
+              <div class="card-inner">
+                <span class="checkbox-circle"></span>
+                <span class="card-icon">🧠</span>
+                <span class="card-label">AI Agents</span>
+              </div>
+            </label>
+            <label class="select-card">
+              <input type="checkbox" name="services" value="cloud-devops" class="hidden-checkbox">
+              <div class="card-inner">
+                <span class="checkbox-circle"></span>
+                <span class="card-icon">☁️</span>
+                <span class="card-label">Cloud/DevOps</span>
+              </div>
+            </label>
+            <label class="select-card">
+              <input type="checkbox" name="services" value="shopify" class="hidden-checkbox">
+              <div class="card-inner">
+                <span class="checkbox-circle"></span>
+                <span class="card-icon">🛍️</span>
+                <span class="card-label">Shopify Store</span>
+              </div>
+            </label>
+          </div>
+          <div class="validation-message" id="step1-validation">Please select at least one service.</div>
+        </div>
+
+        <!-- Step 2 Content: Budget & Timeline -->
+        <div class="modal-step-content" data-step="2">
+          <div class="range-group">
+            <div class="range-labels">
+              <label for="budget-range" class="field-label">Estimated Budget (USD)</label>
+              <span class="range-value" id="budget-value">$15,000</span>
+            </div>
+            <input type="range" id="budget-range" name="budget" min="5000" max="100000" step="5000" value="15000" class="custom-range">
+            <div class="slider-ticks">
+              <span>$5k</span>
+              <span>$25k</span>
+              <span>$50k</span>
+              <span>$75k</span>
+              <span>$100k+</span>
+            </div>
+            
+            <!-- Live Indicator Cost Calculator Dashboard -->
+            <div class="estimator-dashboard">
+              <div class="estimator-tier active" id="tier-mvp">
+                <span class="tier-icon">🌱</span>
+                <span class="tier-name">MVP Launch</span>
+                <span class="tier-desc">Validation & Core Features</span>
+              </div>
+              <div class="estimator-tier" id="tier-pro">
+                <span class="tier-icon">⚡</span>
+                <span class="tier-name">Professional</span>
+                <span class="tier-desc">Scale & Advanced Integrations</span>
+              </div>
+              <div class="estimator-tier" id="tier-enterprise">
+                <span class="tier-icon">👑</span>
+                <span class="tier-name">Enterprise</span>
+                <span class="tier-desc">Custom AI Workflows & DevOps</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-group" style="margin-top: 2.5rem;">
+            <span class="field-label">Target Timeline</span>
+            <div class="timeline-options">
+              <label class="timeline-radio">
+                <input type="radio" name="timeline" value="under-1-month" checked>
+                <span>&lt; 1 Month</span>
+              </label>
+              <label class="timeline-radio">
+                <input type="radio" name="timeline" value="1-3-months">
+                <span>1–3 Months</span>
+              </label>
+              <label class="timeline-radio">
+                <input type="radio" name="timeline" value="3-6-months">
+                <span>3–6 Months</span>
+              </label>
+              <label class="timeline-radio">
+                <input type="radio" name="timeline" value="flexible">
+                <span>Flexible</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 Content: Contact Info -->
+        <div class="modal-step-content" data-step="3">
+          <div class="form-grid">
+            <div class="form-field">
+              <input type="text" id="client-name" name="name" placeholder=" " required>
+              <label for="client-name">Your Name</label>
+              <span class="error-text">Please enter your name.</span>
+            </div>
+            <div class="form-field">
+              <input type="text" id="client-company" name="company" placeholder=" ">
+              <label for="client-company">Company (Optional)</label>
+            </div>
+            <div class="form-field full-width">
+              <input type="email" id="client-email" name="email" placeholder=" " required>
+              <label for="client-email">Email Address</label>
+              <span class="error-text">Please enter a valid email address.</span>
+            </div>
+            <div class="form-field full-width">
+              <textarea id="client-notes" name="notes" placeholder=" " rows="3"></textarea>
+              <label for="client-notes">Tell us briefly about the project scope...</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 Content: Success Screen -->
+        <div class="modal-step-content success-content" data-step="4">
+          <div class="success-icon-wrapper">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+              <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+          </div>
+          <h4 class="success-title">Blueprint Assembled!</h4>
+          <p class="success-text">
+            Thank you for sharing your project goals. Our system architects are already analyzing your requirements. We will contact you at <strong id="success-email-placeholder">your email</strong> within 2 business hours.
+          </p>
+          <button type="button" class="btn btn-primary btn-large close-modal-btn" style="margin-top: 1.5rem;">
+            <span>Back to Homepage</span>
+          </button>
+        </div>
+
+        <!-- Step Actions -->
+        <div class="modal-actions" id="modal-actions-bar">
+          <button type="button" class="btn btn-secondary modal-back" disabled>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn-primary modal-next">
+            <span id="next-btn-text">Continue</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
